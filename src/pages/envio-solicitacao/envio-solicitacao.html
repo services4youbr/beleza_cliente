@@ -1,0 +1,45 @@
+
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Enviar Solicitação</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+  <ion-item>
+    <ion-label>Lista de serviços : </ion-label>
+    <ion-select [(ngModel)]="solicitacao.servico">
+      <ion-option value="Maquiadora">Maquiadora</ion-option>
+      <ion-option value="Cabeleireira">Cabeleireira</ion-option>
+      <ion-option value="Manicure">Manicure</ion-option>
+      <ion-option value="Pedicure">Pedicure</ion-option>
+    </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-label>Seu Nome : </ion-label>
+    <ion-input [(ngModel)]="solicitacao.nomeCli" ></ion-input>
+  </ion-item>
+  <ion-item>
+      <ion-label>CEP para o atendimento : </ion-label>
+      <ion-input [(ngModel)]="solicitacao.cep"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Data do atendimento : </ion-label>
+    <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="solicitacao.data"></ion-datetime>
+  </ion-item>
+  <ion-item>
+    <ion-label>Hora do atendimento : </ion-label>
+    <ion-datetime displayFormat="HH:mm" [(ngModel)]="solicitacao.hora"></ion-datetime>
+  </ion-item>
+  <ion-item>
+    <ion-label>Ativo</ion-label>
+    <ion-select [(ngModel)]="solicitacao.status">
+      <ion-option value="Sim">Sim</ion-option>
+    </ion-select>
+  </ion-item>
+  <button ion-button block clear (click)="addEnvioSolicitacao(solicitacao)">Enviar</button>
+
+</ion-content>
